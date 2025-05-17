@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ho486o@!6+mgv(45f)scynof^r^zc=r)#=zw8%z)h#x#%n+t*a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.6.126.181']
 
 
 # Application definition
@@ -80,10 +80,15 @@ WSGI_APPLICATION = 'OnlineBookStore.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_db_name',
+        'USER': 'your_db_user',
+        'PASSWORD': 'your_db_password',
+        'HOST': 'localhost',  # or use EC2 private IP or RDS endpoint
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
